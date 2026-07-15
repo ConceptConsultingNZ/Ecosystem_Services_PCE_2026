@@ -1,0 +1,42 @@
+﻿crop_type,half_sat,p_managed,season,fr_spring,fr_summer,n_cavity,n_ground,p_dep,crop_value
+almonds,0.08,0.9,spring,1,0.1,0.9,0.1,0.65,0
+blueberries,0.08,0,summer,0.1,1,0.1,0.8,0.65,80000
+apples,0.07,0.6,spring,1,0.2,0.3,0.6,0.65,120000
+broccoli,0.05,0.1,summer,0.2,0.6,0.1,0.6,0.25,30000
+cabbages,0.05,0.1,summer,0.2,0.5,0.1,0.6,0.25,25000
+cattle dairy,0.05,0,spring,0.3,0.3,0.1,0.6,0,0
+cattle meat,0.05,0,spring,0.3,0.3,0.1,0.6,0,0
+chicory,0.06,0,summer,0.4,0.6,0.1,0.6,0.3,5000
+clover,0.06,0,summer,0.5,0.8,0.1,0.7,0.4,4000
+deer,0.05,0,spring,0.3,0.3,0.1,0.6,0,0
+goats dairy,0.05,0,spring,0.3,0.3,0.1,0.6,0,0
+grapes,0.05,0.2,spring,0.5,0.2,0.3,0.5,0.15,25000
+kale,0.05,0.1,summer,0.2,0.5,0.1,0.6,0.25,12000
+lucerne,0.07,0,summer,0.5,0.7,0.1,0.7,0.4,6000
+maize,0.05,0,summer,0.1,0.1,0.1,0.4,0,0
+oats,0.05,0,spring,0.1,0.1,0.1,0.4,0,0
+plantain,0.05,0,summer,0.3,0.4,0.1,0.6,0.1,6000
+pumpkins,0.08,0.3,summer,0.4,0.9,0.1,0.6,0.65,15000
+swedes,0.05,0.1,summer,0.2,0.4,0.1,0.6,0.25,8000
+turnips forage,0.05,0.1,summer,0.2,0.4,0.1,0.6,0.25,7000
+yarrow,0.06,0,summer,0.5,0.7,0.2,0.6,0.35,10000
+chamomile,0.07,0,summer,0.6,0.8,0.2,0.6,0.5,12000
+flowers and foliage,0.08,0.2,summer,0.8,1,0.2,0.5,0.7,50000
+melons,0.08,0.4,summer,0.4,0.9,0.1,0.6,0.65,10000
+avocados,0.07,0.3,spring,0.8,0.4,0.3,0.5,0.5,35000
+feijoa,0.07,0.2,spring,0.7,0.4,0.3,0.5,0.5,35000
+kiwifruit,0.08,0.6,spring,0.9,0.4,0.3,0.5,0.65,240000
+olives,0.05,0,spring,0.3,0.2,0.3,0.4,0.05,12000
+persimmons,0.07,0.2,spring,0.7,0.4,0.3,0.5,0.5,100000
+pinenuts,0.05,0,spring,0.2,0.2,0.4,0.3,0.05,15000
+pomegranate,0.07,0.2,summer,0.5,0.7,0.3,0.5,0.45,30000
+tamarillo,0.07,0.2,spring,0.6,0.4,0.3,0.5,0.5,40000
+chickens,0.05,0,summer,0.1,0.1,0.05,0.1,0,0
+chickens eggs,0.05,0,summer,0.1,0.1,0.05,0.1,0,0
+finfish,0.05,0,summer,0,0,0,0,0,0
+horses,0.05,0,spring,0.2,0.2,0.05,0.2,0,0
+molluscs,0.05,0,summer,0,0,0,0,0,0
+pigs,0.05,0,summer,0.1,0.1,0.05,0.1,0,0
+short_rotation_cropping_undefined,0.06,0.1,summer,0.3,0.4,0.1,0.5,0.25,20000
+perennial_horticulture_undefined,0.07,0.2,spring,0.6,0.4,0.2,0.4,0.45,40000
+grazing_undefined,0.05,0,spring,0.3,0.3,0.1,0.6,0,0

@@ -1,0 +1,27 @@
+{
+    "args": {
+        "alpha_m": "1/12",
+        "aoi_path": "D:/Data/eco-index/kx-eco-index-catchments-for-nz/eco_catchments.shp",
+        "beta_i": "1",
+        "biophysical_table_path": "E:/Google Drive/Work/Concept/PCE ES values/GIS/Regulating/Water regulation/InVEST inputs/biophysical.csv",
+        "climate_zone_raster_path": "E:/Google Drive/Work/Concept/PCE ES values/GIS/Regulating/Water regulation/InVEST inputs/climate_zone.tif",
+        "climate_zone_table_path": "E:/Google Drive/Work/Concept/PCE ES values/GIS/Regulating/Water regulation/InVEST inputs/climate_zone_table.csv",
+        "dem_raster_path": "D:/Data/LINZ/NZ_8m_DEM/NZ_DEM_100m_aligned_SMAP.tif",
+        "et0_raster_table": "E:/Google Drive/Work/Concept/PCE ES values/GIS/Regulating/Water regulation/InVEST inputs/et0_table.csv",
+        "flow_dir_algorithm": "D8",
+        "gamma": "1",
+        "l_path": "",
+        "lulc_raster_path": "E:/Google Drive/Work/Concept/PCE ES values/GIS/Common/lcdb6.tif",
+        "monthly_alpha": false,
+        "monthly_alpha_path": "",
+        "precip_raster_table": "E:/Google Drive/Work/Concept/PCE ES values/GIS/Regulating/Water regulation/InVEST inputs/precip_raster_table.csv",
+        "rain_events_table_path": "",
+        "results_suffix": "",
+        "soil_group_path": "E:/Google Drive/Work/Concept/PCE ES values/GIS/Regulating/Water regulation/InVEST inputs/soilgroup.tif",
+        "threshold_flow_accumulation": "100",
+        "user_defined_climate_zones": true,
+        "user_defined_local_recharge": false,
+        "workspace_dir": "D:/InVEST/Seasonal water yield"
+    },
+    "model_id": "seasonal_water_yield"
+}

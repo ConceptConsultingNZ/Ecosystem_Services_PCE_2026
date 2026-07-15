@@ -1,0 +1,95 @@
+lucode,descript,nesting_cavity_availability_index,nesting_ground_availability_index,floral_resources_spring_index,floral_resources_summer_index
+0,,0,0,0,0
+1,Strict nature reserve,0.8,0.2,0.4,0.4
+2,Wilderness area,0.8,0.2,0.3,0.4
+3,National park,0.8,0.2,0.4,0.4
+4,Natural feature protection,0.7,0.2,0.4,0.4
+5,Habitat or species management area,0.7,0.3,0.5,0.5
+6,Protected landscape,0.7,0.3,0.5,0.5
+7,Other conserved area,0.6,0.3,0.4,0.4
+8,Cultural and natural heritage,0.6,0.2,0.4,0.4
+9,Minimal use from relatively natural environments,0.6,0.3,0.3,0.3
+10,Defence land,0.3,0.2,0.2,0.2
+11,Unused land and land in transition,0.2,0.4,0.2,0.2
+12,Plantation forests,0.5,0.2,0.2,0.2
+13,Grazing modified pasture systems,0.05,0.6,0.4,0.3
+14,Grazing modified pasture systems | apples,0.1,0.5,0.7,0.4
+15,Grazing modified pasture systems | broccoli,0.05,0.5,0.3,0.2
+16,Grazing modified pasture systems | cabbages,0.05,0.5,0.2,0.1
+17,Grazing modified pasture systems | cattle dairy,0.05,0.6,0.4,0.3
+18,Grazing modified pasture systems | cattle meat,0.05,0.6,0.4,0.3
+19,Grazing modified pasture systems | chicory,0.05,0.6,0.6,0.4
+20,Grazing modified pasture systems | clover,0.05,0.6,0.7,0.6
+21,Grazing modified pasture systems | deer,0.05,0.6,0.4,0.3
+22,Grazing modified pasture systems | goats dairy,0.05,0.6,0.4,0.3
+23,Grazing modified pasture systems | grapes,0.1,0.5,0.6,0.3
+24,Grazing modified pasture systems | kale,0.05,0.5,0.2,0.1
+25,Grazing modified pasture systems | lucerne,0.05,0.6,0.7,0.5
+26,Grazing modified pasture systems | maize,0.05,0.4,0.1,0.1
+27,Grazing modified pasture systems | oats,0.05,0.4,0.1,0.1
+28,Grazing modified pasture systems | plantain,0.05,0.6,0.4,0.3
+29,Grazing modified pasture systems | pumpkins,0.05,0.5,0.7,0.5
+30,Grazing modified pasture systems | swedes,0.05,0.5,0.2,0.1
+31,Grazing modified pasture systems | turnips forage,0.05,0.5,0.2,0.1
+32,Grazing modified pasture systems | yarrow,0.05,0.6,0.6,0.4
+33,Short-rotation and seasonal cropping,0.05,0.4,0.3,0.2
+34,Short-rotation and seasonal cropping | apples,0.1,0.4,0.7,0.4
+35,Short-rotation and seasonal cropping | broccoli,0.05,0.4,0.3,0.2
+36,Short-rotation and seasonal cropping | cabbages,0.05,0.4,0.2,0.1
+37,Short-rotation and seasonal cropping | cattle dairy,0.05,0.4,0.3,0.2
+38,Short-rotation and seasonal cropping | chamomile,0.05,0.4,0.7,0.5
+39,Short-rotation and seasonal cropping | chicory,0.05,0.4,0.6,0.4
+40,Short-rotation and seasonal cropping | clover,0.05,0.4,0.7,0.6
+41,Short-rotation and seasonal cropping | flowers and foliage,0.1,0.4,0.9,0.7
+42,Short-rotation and seasonal cropping | lucerne,0.05,0.4,0.7,0.5
+43,Short-rotation and seasonal cropping | maize,0.05,0.3,0.1,0.1
+44,Short-rotation and seasonal cropping | melons,0.05,0.4,0.8,0.6
+45,Short-rotation and seasonal cropping | plantain,0.05,0.4,0.4,0.3
+46,Short-rotation and seasonal cropping | pumpkins,0.05,0.4,0.8,0.6
+47,Short-rotation and seasonal cropping | turnips forage,0.05,0.4,0.2,0.1
+48,Perennial horticulture,0.2,0.4,0.6,0.4
+49,Perennial horticulture | apples,0.2,0.4,0.8,0.5
+50,Perennial horticulture | avocados,0.2,0.4,0.6,0.4
+51,Perennial horticulture | broccoli,0.1,0.4,0.3,0.2
+52,Perennial horticulture | cabbages,0.1,0.4,0.2,0.1
+53,Perennial horticulture | feijoa,0.2,0.4,0.7,0.5
+54,Perennial horticulture | grapes,0.2,0.4,0.6,0.3
+55,Perennial horticulture | kiwifruit,0.2,0.4,0.8,0.5
+56,Perennial horticulture | olives,0.2,0.4,0.3,0.2
+57,Perennial horticulture | persimmons,0.2,0.4,0.6,0.4
+58,Perennial horticulture | pinenuts,0.2,0.4,0.2,0.2
+59,Perennial horticulture | pomegranate,0.2,0.4,0.6,0.4
+60,Perennial horticulture | pumpkins,0.2,0.4,0.8,0.6
+61,Perennial horticulture | tamarillo,0.2,0.4,0.6,0.4
+62,Intensive horticulture,0.05,0.1,0.2,0.2
+63,Intensive animal production,0.05,0.1,0.1,0.1
+64,Intensive animal production | chickens,0.05,0.1,0.1,0.1
+65,Intensive animal production | chickens eggs,0.05,0.1,0.1,0.1
+66,Intensive animal production | finfish,0,0,0,0
+67,Intensive animal production | horses,0.05,0.2,0.2,0.2
+68,Intensive animal production | molluscs,0,0,0,0
+69,Intensive animal production | pigs,0.05,0.1,0.1,0.1
+70,Water and wastewater,0,0,0,0
+71,Land in transition,0.1,0.4,0.2,0.2
+72,Residential,0.3,0.2,0.5,0.4
+73,Public recreation and services,0.3,0.2,0.5,0.4
+74,Commercial,0.1,0.1,0.2,0.1
+75,Manufacturing and industrial,0.05,0.05,0.1,0.05
+76,Utilities,0.05,0.05,0.1,0.05
+77,Transport and communication,0.05,0.05,0.1,0.05
+78,Mining,0.05,0.2,0.05,0.05
+79,Mining | clay,0.05,0.2,0.05,0.05
+80,Mining | coal,0.05,0.2,0.05,0.05
+81,Mining | gold,0.05,0.2,0.05,0.05
+82,Mining | gravel,0.05,0.2,0.05,0.05
+83,Mining | ironsand,0.05,0.2,0.05,0.05
+84,Mining | lime,0.05,0.2,0.05,0.05
+85,Mining | limestone,0.05,0.2,0.05,0.05
+86,Mining | metal,0.05,0.2,0.05,0.05
+87,Mining | salt,0.05,0.2,0.05,0.05
+88,Mining | shingle,0.05,0.2,0.05,0.05
+89,Mining | silica sand,0.05,0.2,0.05,0.05
+90,Mining | stone,0.05,0.2,0.05,0.05
+91,Mining | zeolite,0.05,0.2,0.05,0.05
+92,Waste treatment and disposal,0.05,0.1,0.05,0.05
+93,Vacant and transitioning land,0.1,0.4,0.2,0.2

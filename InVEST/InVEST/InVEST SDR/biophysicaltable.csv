@@ -1,0 +1,34 @@
+description,lucode,usle_c,usle_p
+Built up,1,0.05,1
+Urban Park,2,0.02,1
+Transport Inf,5,0.2,1
+Mines & Dumps,6,0.45,1
+Sand & Gravel,10,0.4,1
+Landslide,12,0.6,1
+Snow & Ice,14,0,1
+Alpine Grass,15,0.05,1
+Gravel & Rock,16,0.3,1
+Lake & Pond,20,0,1
+River,21,0,1
+Estuarine,22,0,1
+Cropland,30,0.3,1
+Orchard & Vineyard,33,0.15,1
+High Producing Grassland,40,0.02,1
+Low Producing Grassland,41,0.04,1
+Tussock Grassland,43,0.03,1
+Depleted Grassland,44,0.08,1
+Herbaceous Freshwater,45,0.01,1
+Herbaceous Saline,46,0.01,1
+Flaxland,47,0.02,1
+Fernland,50,0.04,1
+Gorse & Broom,51,0.05,1
+Manuka & Kanuka,52,0.03,1
+Broadleaved Indig,54,0.015,1
+Sub Alpine Shrubland,55,0.03,1
+Mixed Exotic Shrubland,56,0.05,1
+Grey Scrub,58,0.03,1
+Forest Harvested,64,0.2,1
+Deciduous Hardwood,68,0.03,1
+Indigenous Forest,69,0.01,1
+Mangrove,70,0.01,1
+Exotic Forest,71,0.02,1

@@ -1,0 +1,20 @@
+{
+    "args": {
+        "biophysical_table_path": "E:/Google Drive/Work/Concept/PCE ES values/GIS/Regulating/Nutrient regulation/InVEST NDR inputs/biophysical.csv",
+        "calc_n": true,
+        "calc_p": true,
+        "dem_path": "D:/Data/LINZ/NZ_8m_DEM/NZ_DEM_100m_aligned_SMAP.tif",
+        "flow_dir_algorithm": "MFD",
+        "k_param": "2",
+        "lulc_path": "E:/Google Drive/Work/Concept/PCE ES values/GIS/Common/nzlum.tif",
+        "results_suffix": "",
+        "runoff_proxy_av": "",
+        "runoff_proxy_path": "D:/Data/LRIS/lris-water-yield-GTiff/WaterYield_clipped.tif",
+        "subsurface_critical_length_n": "200",
+        "subsurface_eff_n": "0.8",
+        "threshold_flow_accumulation": "100",
+        "watersheds_path": "E:/Google Drive/Work/Concept/PCE ES values/GIS/Common/sea_draining_catchments.shp",
+        "workspace_dir": "D:/InVEST/NDR"
+    },
+    "model_id": "ndr"
+}

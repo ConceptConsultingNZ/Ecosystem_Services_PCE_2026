@@ -1,0 +1,11 @@
+{
+    "args": {
+        "farm_vector_path": "E:/Google Drive/Work/Concept/PCE ES values/GIS/Regulating/Pollination/InVEST inputs/farms_pollinated.shp",
+        "guild_table_path": "E:/Google Drive/Work/Concept/PCE ES values/GIS/Regulating/Pollination/InVEST inputs/guild_table.csv",
+        "landcover_biophysical_table_path": "E:/Google Drive/Work/Concept/PCE ES values/GIS/Regulating/Pollination/InVEST inputs/landcover_biophysical_table.csv",
+        "landcover_raster_path": "E:/Google Drive/Work/Concept/PCE ES values/GIS/Common/nzlum.tif",
+        "results_suffix": "",
+        "workspace_dir": "D:/InVEST/Pollination"
+    },
+    "model_id": "pollination"
+}
