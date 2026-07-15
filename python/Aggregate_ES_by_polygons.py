@@ -23,35 +23,42 @@ from rasterio.warp import reproject, Resampling
 # =========================
 
 timestamp = datetime.now().strftime("%Y%m%d%H%M")
-output_csv = rf"D:\tmp\wetland_ES_{timestamp}.csv"
+output_csv = rf"D:\tmp\region_protected_{timestamp}.csv"
 aggregation_types = ["sum", "mean", "median", "count", "min", "max", "q05", "q95"]
 max_rasters_to_process = None
-ends_with = "value.tif"
-base_dir = r"D:\tmp\updated_rasters"
+ends_with = "_value_2026.tif"
+base_dir = r"D:\tmp\Final rasters"
 
 # Target grid settings
 target_crs = "EPSG:2193"
 # Bounds are xmin, ymin, xmax, ymax in target_crs units.
-target_bounds = (1089300,4162800,2470400,6223200)
+target_bounds = (733800,3792300, 2873300, 7106000,) #Smallest bounding box for seafloor layer
 target_pixel_size = 100
 
 # Required first feature layer
-feature1_path = r"D:\Data\LRIS\Wetlands\WONI.gpkg"
-feature1_layer = "WONI_with_type"
+#feature1_path = r"D:/Data/LRIS/lris-lcdb-v60-land-cover-database-version-60-mainland-new-zealand/LCDB6_derived.gpkg"
+#feature1_layer = "lcdb6_wetland_v2"
+feature1_path = r"D:\Data\Stats NZ geography\statsnzregional-council-2020-generalised-FGDB\regional-council-2020-generalised.gdb"
+feature1_layer = "Regional_Council_2020__generalised_"
 
-feature1_id_field = "feature_id"
-feature1_label_field = "wetland_type"
-feature1_unclassified_value = 0
-feature1_unclassified_label = "Not wetland"
+feature1_id_field = "REGC2020_V1_00"
+feature1_label_field = "REGC2020_V1_00_NAME_ASCII"
+feature1_unclassified_value = 99
+feature1_unclassified_label = "Outside region"
 feature1_all_touched = False
 
 # Optional second feature layer
-feature2_path = None # r"D:\Data\eco-index\kx-eco-index-catchments-for-nz\eco-index-catchments-for-nz.gpkg"
-feature2_layer = None #"eco_index_catchments_for_nz"
+#feature2_path = None # r"D:\Data\eco-index\kx-eco-index-catchments-for-nz\eco-index-catchments-for-nz.gpkg"
+#feature2_layer = None #"eco_index_catchments_for_nz"
+#feature2_path = r"D:\Data\Stats NZ geography\statsnzregional-council-2020-generalised-FGDB\regional-council-2020-generalised.gdb"
+#feature2_layer = "Regional_Council_2020__generalised_"
+feature2_path = r"D:\Data\LINZ\lds-protected-areas-GPKG\protected-areas.gpkg"
+feature2_layer = "protected_areas"
+
 feature2_class_value_field = None
-feature2_class_label_field = "Catchment"
-feature2_unclassified_value = 0
-feature2_unclassified_label = "No catchment"
+feature2_class_label_field = "type"
+feature2_unclassified_value = 99
+feature2_unclassified_label = "Not protected"
 feature2_all_touched = False
 
 
@@ -236,11 +243,16 @@ def prepare_feature1():
 
         feature1_id_field_for_raster = feature1_id_field
 
-        if (feature1[feature1_id_field_for_raster] == feature1_unclassified_value).any():
-            raise ValueError(
-                f"`feature1_unclassified_value` is set to {feature1_unclassified_value}, "
-                "but that value already exists in the first feature layer."
-            )
+        unclassified_mask = (
+            feature1[feature1_id_field_for_raster]
+            == feature1_unclassified_value
+        )
+
+        if unclassified_mask.any():
+            feature1.loc[
+                unclassified_mask,
+                feature1_label_field
+            ] = feature1_unclassified_label
 
         feature1_lookup = (
             feature1[[feature1_id_field_for_raster, feature1_label_field]]
@@ -255,7 +267,7 @@ def prepare_feature1():
 
         if duplicate_values:
             raise ValueError(
-                f"First feature ID value(s) have multiple labels. "
+                "First feature ID value(s) have multiple labels. "
                 f"Example duplicate value(s): {duplicate_values[:10]}"
             )
 
@@ -271,22 +283,26 @@ def prepare_feature1():
             )
         )
 
-    if feature1_unclassified_value in feature1_lookup["feature1_id"].values:
-        raise ValueError(
-            f"`feature1_unclassified_value` is set to {feature1_unclassified_value}, "
-            "but that value already exists in the first feature layer."
-        )
+    unclassified_exists = (
+        feature1_lookup["feature1_id"] == feature1_unclassified_value
+    ).any()
 
-    feature1_lookup = pd.concat(
-        [
-            feature1_lookup,
-            pd.DataFrame({
-                "feature1_id": [feature1_unclassified_value],
-                "feature1_label": [feature1_unclassified_label]
-            })
-        ],
-        ignore_index=True
-    )
+    if unclassified_exists:
+        feature1_lookup.loc[
+            feature1_lookup["feature1_id"] == feature1_unclassified_value,
+            "feature1_label"
+        ] = feature1_unclassified_label
+    else:
+        feature1_lookup = pd.concat(
+            [
+                feature1_lookup,
+                pd.DataFrame({
+                    "feature1_id": [feature1_unclassified_value],
+                    "feature1_label": [feature1_unclassified_label]
+                })
+            ],
+            ignore_index=True
+        )
 
     feature1 = feature1[
         [feature1_id_field_for_raster, feature1_label_field, "geometry"]
@@ -370,11 +386,11 @@ def prepare_optional_feature2():
 
         feature2_value_field_for_raster = feature2_class_value_field
 
-        if (feature2[feature2_value_field_for_raster] == feature2_unclassified_value).any():
-            raise ValueError(
-                f"`feature2_unclassified_value` is set to {feature2_unclassified_value}, "
-                "but that value already exists in the second feature layer."
-            )
+        #if (feature2[feature2_value_field_for_raster] == feature2_unclassified_value).any():
+        #    raise ValueError(
+        #        f"`feature2_unclassified_value` is set to {feature2_unclassified_value}, "
+        #        "but that value already exists in the second feature layer."
+        #    )
 
         feature2_lookup_df = (
             feature2[[feature2_value_field_for_raster, feature2_class_label_field]]
@@ -400,19 +416,20 @@ def prepare_optional_feature2():
             )
         )
 
-    feature2_lookup[feature2_unclassified_value] = feature2_unclassified_label
+    #Use the unclassified class name only if not using an existing class
+    feature2_lookup.setdefault(feature2_unclassified_value, feature2_unclassified_label)
 
     return feature2, feature2_lookup, feature2_value_field_for_raster
 
 def get_category_and_subcategory_from_filename(raster_path):
     raster_file = os.path.basename(raster_path)
 
-    if not raster_file.lower().endswith("_value.tif"):
+    if not raster_file.lower().endswith(ends_with):
         raise ValueError(
-            f"Raster filename must end with '_value.tif': {raster_file}"
+            f"Raster filename must end with ends_with: {raster_file}"
         )
 
-    name = raster_file[:-len("_value.tif")]
+    name = raster_file[:-len(ends_with)]
 
     if "_" not in name:
         category = name
@@ -543,12 +560,14 @@ results = []
 
 print(f"Scanning for rasters ending with '{ends_with}'...")
 
-raster_files = []
-
-for root, dirs, files in os.walk(base_dir):
-    for file in files:
-        if file.lower().endswith(ends_with.lower()):
-            raster_files.append(os.path.join(root, file))
+raster_files = [
+    os.path.join(base_dir, file)
+    for file in os.listdir(base_dir)
+    if (
+        os.path.isfile(os.path.join(base_dir, file))
+        and file.lower().endswith(ends_with.lower())
+    )
+]
 
 raster_files.sort()
 
@@ -571,10 +590,6 @@ for i, raster_path in enumerate(raster_files, start=1):
     raster_modified_date = datetime.fromtimestamp(
         os.path.getmtime(raster_path)
     ).isoformat(sep=" ", timespec="seconds")
-
-    root = os.path.dirname(raster_path)
-    rel_path = os.path.relpath(root, base_dir)
-    foldername = rel_path.split(os.sep)[0]
 
     print(f"\n[{i}/{len(raster_files)}] Processing: {raster_path}")
 
@@ -683,34 +698,6 @@ for i, raster_path in enumerate(raster_files, start=1):
                 output_row["count"] = int(output_row["count"])
 
             results.append(output_row)
-
-        total_row = {
-            "category": foldername,
-            "subcategory": subcategory,
-            "raster_file": raster_file,
-            "raster_modified_date": raster_modified_date,
-            "feature1_id": None,
-            "feature1_label": "Total raster",
-            "feature2_label": None,
-            "area_ha": None,
-            "positive_cell_count": int((raster_values > 0).sum()),
-        }
-
-        raster_stat_values = {
-            "sum": float(raster_values.sum()) if raster_values.size else 0.0,
-            "mean": float(raster_values.mean()) if raster_values.size else None,
-            "median": float(np.median(raster_values)) if raster_values.size else None,
-            "count": int(raster_values.size),
-            "min": float(raster_values.min()) if raster_values.size else None,
-            "max": float(raster_values.max()) if raster_values.size else None,
-            "q05": float(np.quantile(raster_values, 0.05)) if raster_values.size else None,
-            "q95": float(np.quantile(raster_values, 0.95)) if raster_values.size else None,
-        }
-
-        for stat in aggregation_types:
-            total_row[stat] = raster_stat_values[stat]
-
-        results.append(total_row)
 
         if "sum" in aggregation_types:
             grouped_sum_total = float(grouped["sum"].sum())
