@@ -4,7 +4,7 @@ This folder contains the configuration files used to run selected InVEST (Integr
 
 The files are provided to document the model settings, input parameters, and workflow used in the project. They are included for transparency and reproducibility purposes and are not intended to be provided as ready-to-run model configurations.
 
-Many configuration files reference project-specific datasets, directory structures, and intermediate processing outputs that are not included in this folder. As a result, users should expect that modification will be required before the configurations can be executed in a different environment.
+The configuration files reference project-specific datasets, directory structures, and intermediate processing outputs that are not included in this folder, but can be found in the "workflow" release. The InVEST models themselves can be downloaded from https://naturalcapitalalliance.stanford.edu/invest/models.
 
 These files should be interpreted alongside the accompanying technical documentation, which describes:
 
